@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title>Candidate</title>
+  <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+</style>
+  </head>
+  <p>
+    <a href="{% url 'candidate:home' %}">Home</a>
+    <a href="{% url 'candidate:candidates' %}">Candidates</a>
+    <a href="{% url 'candidate:tests' %}">Tests</a>
+    <a href="{% url 'candidate:add_candidate' %}">New Candidates</a>
+    <a href="{% url 'candidate:add_test' %}">New Test</a>
+
+
+  </p>
+  {%  block content %}{% endblock content %}
+  <head>
+    </html>

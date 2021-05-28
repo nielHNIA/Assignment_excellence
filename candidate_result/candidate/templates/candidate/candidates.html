@@ -1,0 +1,29 @@
+{% extends 'candidate/base.html' %}
+
+{% block content %}
+  <a href="{% url 'candidate:add_candidate' %} ">Add New Candidate to Database</a>
+
+
+
+ <h2>All candidates</h2>
+ <p>Info of all the candidates</p>
+
+ <table style="width:100%">
+   <tr>
+     <th>Name</th>
+     <th>Email</th>
+     <th>address</th>
+   </tr>
+   {% for candidate in object_list %}
+   <tr>
+     <td>{{candidate.name}}</td>
+     <td>{{candidate.email}}</td>
+     <td>{{candidate.address}}</td>
+     <td><a href="{% url "candidate:update_candidate" candidate.id %}">Update</a><td>
+   </tr>
+   {% endfor %}
+ </table>
+
+
+
+{% endblock content %}

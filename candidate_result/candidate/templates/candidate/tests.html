@@ -1,0 +1,28 @@
+{% extends 'candidate/base.html' %}
+{% block content %}
+
+  <h2>All candidates Test Scores</h2>
+  <p>Info</p>
+
+  <table style="width:100%">
+    <tr>
+      <th>Name</th>
+      <th>First Round</th>
+      <th>Second Round</th>
+      <th>Third Round</th>
+      <th>Average Score</th>
+    </tr>
+    {% for test in object_list %}
+    <tr>
+      <td>{{test.name}}</td>
+      <td>{{test.first_round}}</td>
+      <td>{{test.second_round}}</td>
+      <td>{{test.third_round}}</td>
+      <td>{{test.avg_scorer}}
+      <td><a href="{% url "candidate:update_test" test.id %}">Update Test score{{test.name }}</a><td>
+    </tr>
+    {% endfor %}
+  </table>
+
+
+{% endblock content %}
